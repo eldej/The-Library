@@ -16,5 +16,5 @@ if __name__ == "__main__":
     finish = False
     while finish is False:
         action = input("What do you want to do today? (add, read, lend, search, done): ")
-        if
+        if action
 

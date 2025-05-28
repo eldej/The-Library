@@ -9,7 +9,7 @@ class Book:
         self.qty = qty
 
     def __str__(self) -> str:
-        if self.read == False:
+        if not self.read:
             str_read = "You have not read it."
         else:
             str_read = "You have read it."
@@ -24,6 +24,6 @@ class Book:
         return total
 
     def __repr__(self):
-
+        print(f"")
     def __eq__(self, other):
 
