@@ -1,4 +1,7 @@
-def add_book():
+# Add a new book entry to the library.txt file or update the qty of an existing one.
+# No inputs; user inputs all book data
+# No outputs; function modifies library file
+def add_book() -> None:
     title = input('Title:\n')               # Lines 6-17 gather title, author, and ISBN for the new book
     author = input('Author(s):\n')
     goodisbn = False
@@ -32,7 +35,9 @@ def add_book():
             with open('library.txt', 'a') as lib:       # Adds the book to the library if it is not already there (append mode as opposed to write mode)
                 lib.write(f'\n{title} | {author} |{isbn}| Unread | - | 1')
 
-
+# Modify a book's reading status in the library.
+# No inputs; user inputs isbn and new status
+# No outputs; function modifies library file
 def chg_reading_status():
     isbn = ' ' + input('What is the ISBN of this book?\n') + ' '
     status = input("What is this book's read status?\n")
@@ -52,6 +57,9 @@ def chg_reading_status():
         else:
             print('Your book could not be found.')
 
+# Modify a book's lending status in the library.
+# No inputs; user inputs ISBN and lendee
+# No outputs; function modifies library file
 def lend_book():
     isbn = ' ' + input('What is the ISBN of this book?\n') + ' '
     status = input("Who are you lending this to? \n")
@@ -71,6 +79,9 @@ def lend_book():
         else:
             print('Your book could not be found.')
 
+# Searches library by ISBN.
+# No inputs; ISBN inputted by user
+# No outputs; function modifies library file
 def search_library():
     goodisbn = False
     while not goodisbn:  # While loop ensures ISBN is formatted correctly
@@ -90,6 +101,9 @@ def search_library():
 
     print('Your book could not be found.')
 
+# Driver file. Launches library and iterates until user is done.
+# No inputs
+# No outputs; only library.txt file is modified.
 if __name__ == "__main__":
     # library = open("library.txt")         ### I think the file should be opened in a case by case basis, using 'w' and 'r' when necessary.
     # split_lib = library.readlines()

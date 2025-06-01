@@ -24,6 +24,10 @@ class Book:
         return total
 
     def __repr__(self):
-        print(f"")
-    def __eq__(self, other):
+        return f"{self.title} | {self.author} | {self.isbn} | {self.read} | {self.lent} | {self.qty}"
 
+    def __eq__(self, other) -> bool:
+        if self.title == other.title and self.author == other.author and self.isbn == other.isbn:
+            return True
+        else:
+            return False
