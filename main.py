@@ -105,10 +105,7 @@ def search_library():
 # No inputs
 # No outputs; only library.txt file is modified.
 if __name__ == "__main__":
-    # library = open("library.txt")         ### I think the file should be opened in a case by case basis, using 'w' and 'r' when necessary.
-    # split_lib = library.readlines()
-    finish = False
-    while finish is False:
+    while True:
         action = input("What do you want to do today? (add, status, lend, search, done):\n")
         if action == 'add':
             add_book()
@@ -119,7 +116,6 @@ if __name__ == "__main__":
         elif action == 'search':
             search_library()
         elif action == 'done':
-            finish = True
             exit()
         else:
             print('Please enter one of the listed options.\n\n')
