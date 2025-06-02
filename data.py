@@ -1,33 +1,32 @@
-
 class Book:
-    def __init__(self, isbn:str, title:str, author:str, qty:int = 1):
+    def __init__(self, title:str, author:str, isbn:str, readstate:str, lendstate:str, qty:int):
         self.isbn = isbn
         self.title = title
         self.author = author
-        self.read = False
-        self.lent = None
+        self.readstate = readstate
+        self.lendstate = lendstate
         self.qty = qty
 
     def __str__(self) -> str:
-        if not self.read:
-            str_read = "You have not read it."
+        if self.lendstate != '-':
+            str_lent = f"{self.lendstate} has borrowed this book."
         else:
-            str_read = "You have read it."
+            str_lent = 'This book is available.'
 
-        if self.lent is not None:
-            str_lent = f"{self.lent} has borrowed this book."
-        else:
-            str_lent = ""
-
-        total = f"This book is {self.title} by {self.author}." + "\n" + str_read + "\n" + str_lent
+        total = (f'{self.title} by {self.author}:\n'
+                 f'There are {self.qty} copies of this book.\n'
+                 f'Availability: {str_lent}\n'
+                 f'This book is {self.readstate}.')
 
         return total
 
     def __repr__(self):
-        return f"{self.title} | {self.author} | {self.isbn} | {self.read} | {self.lent} | {self.qty}"
+        return f"{self.title} | {self.author} | {self.isbn} | {self.readstate} | {self.lendstate} | {self.qty}"
 
     def __eq__(self, other) -> bool:
-        if self.title == other.title and self.author == other.author and self.isbn == other.isbn:
+        if self == other:
+            return True
+        if self.isbn == other.isbn:
             return True
         else:
             return False
