@@ -3,7 +3,6 @@ from data import Book
 # Add a new book entry to the list of books or update the qty of an existing one.
 # No inputs; user inputs all book data
 # No outputs; function modifies book list
-    # Note that each book has a unique ISBN
 def add_book():
     title = input('Title:\n')               # Lines 6-17 gather title, author, and ISBN for the new book
     author = input('Author(s):\n')
