@@ -11,4 +11,4 @@ _welcome to..._
 - Contains **readable**  collection of entered books
 - Data per book includes title, author, ISBN, reading & lending status
 
-**_NOTE: No unit tests could be made since all functions require user input. Test by running main and trying each function using manual inputs._**
+**_NOTE: No unit tests could be made since all functions require user input. Test by running main.py and trying each function using manual inputs._**
