@@ -1,3 +1,5 @@
+from os import WCONTINUED
+
 from data import Book
 
 # Add a new book entry to the list of books or update the qty of an existing one.
@@ -74,10 +76,16 @@ def search_library():
 if __name__ == "__main__":
     books = []
     workingfile = input('file:\n')
-    with open(workingfile) as lib:
-        for line in lib:                    #Creates a list[Book] with attributes specified in the working file
-            atts = line.split(' | ')
-            books.append(Book(atts[0], atts[1], atts[2], atts[3], atts[4], int(atts[5])))
+    try:
+        with open(workingfile) as lib:
+            for line in lib:                    #Creates a list[Book] with attributes specified in the working file
+                atts = line.split(' | ')
+                books.append(Book(atts[0], atts[1], atts[2], atts[3], atts[4], int(atts[5])))
+    except FileNotFoundError:
+        newlib = input(f"No existing library titled {workingfile}. Should I create new library with that name? (y/n)\n")
+        if newlib == 'n':
+            exit()
+
 
     while True:
         action = input("What do you want to do today? (add, status, lend, search, done):\n").strip()
