@@ -11,4 +11,5 @@ _welcome to..._
 - Contains example **readable**  collection of entered books
 - Data per book includes title, author, ISBN, reading & lending status
 
-**_NOTE: No unit tests could be made since all functions require user input. Test by running main.py and trying each function using manual inputs._**
+**_NOTE: No unit tests could be made since all functions require user input. Test by running main.py and trying each function using manual inputs.
+Also, all code was written by both Jason Judin and Elliot DeJong so each function is not labeled with one name._**
