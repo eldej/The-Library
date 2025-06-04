@@ -1,5 +1,3 @@
-from os import WCONTINUED
-
 from data import Book
 
 # Add a new book entry to the list of books or update the qty of an existing one.
