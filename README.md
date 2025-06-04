@@ -7,8 +7,8 @@ _welcome to..._
 ### data.py
 - Outline of Book class and internal functions
 
-### library.txt
-- Contains **readable**  collection of entered books
+### library.txt & opus.txt
+- Contains example **readable**  collection of entered books
 - Data per book includes title, author, ISBN, reading & lending status
 
 **_NOTE: No unit tests could be made since all functions require user input. Test by running main.py and trying each function using manual inputs._**
