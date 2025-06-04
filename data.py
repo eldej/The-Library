@@ -13,10 +13,10 @@ class Book:
         else:
             str_lent = 'This book is available.'
 
-        total = (f'{self.title} by {self.author}:\n'
-                 f'There are {self.qty} copies of this book.\n'
-                 f'Availability: {str_lent}\n'
-                 f'This book is {self.readstate}.')
+        total = (f'\t"{self.title}" by {self.author}:\n'
+                 f'\tThere are {self.qty} copies of this book.\n'
+                 f'\tAvailability: {str_lent}\n'
+                 f'\tThis book is {self.readstate}.')
 
         return total
 

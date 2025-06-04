@@ -31,7 +31,8 @@ def add_book():
 # No inputs; user inputs isbn and new status
 # No outputs; function modifies library file
 def chg_reading_status():
-    isbn = f' {input('What is the ISBN of this book?\n')} '
+    isbn_in = input('What is the ISBN of this book?\n')
+    isbn = f" {isbn_in} "
     for i in books:
         if f' {i.isbn} ' == isbn:
             i.readstate = input("What is this book's read status?\n")
@@ -44,7 +45,8 @@ def chg_reading_status():
 # No inputs; user inputs ISBN and lendee
 # No outputs; function modifies library file
 def lend_book():
-    isbn = f' {input('What is the ISBN of this book?\n')} '
+    isbn_in = input('What is the ISBN of this book?\n')
+    isbn = f" {isbn_in} "
     for i in books:
         if f' {i.isbn} ' == isbn:
             i.lendstate = input("Who are you lending this to?\n")
@@ -57,9 +59,11 @@ def lend_book():
 # No inputs; ISBN inputted by user
 # No outputs; function modifies library file
 def search_library():
-    isbn = f' {input('What is the ISBN of this book?\n')} '
+    isbn_in = input('What is the ISBN of this book?\n')
+    isbn = f" {isbn_in} "
     for i in books:
         if f' {i.isbn} ' == isbn:
+            print("\nYour book:")
             print(f'{i.__str__()}\n')
             return
     print('Your book could not be found.\n')
@@ -76,7 +80,7 @@ if __name__ == "__main__":
             books.append(Book(atts[0], atts[1], atts[2], atts[3], atts[4], int(atts[5])))
 
     while True:
-        action = input("What do you want to do today? (add, status, lend, search, done):\n")
+        action = input("What do you want to do today? (add, status, lend, search, done):\n").strip()
         if action == 'add':
             add_book()
         elif action == 'status':
